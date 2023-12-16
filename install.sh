@@ -497,7 +497,7 @@ main_menu() {
     echo ""
     echo -e "${purple}4) ${yellow}Un${red}in${yellow}st${red}al${yellow}l w${red}s${yellow}tu${red}nn${yellow}el${reset}"
     echo ""
-    echo -e "${purple}5) ${yellow}Install on Termux${rest}"
+    echo -e "${purple}5) ${blue}In${cyan}sta${blue}ll ${cyan}on ${purple}Termux${rest}"
     echo ""
     echo -e "${purple}0) Exit${rest}"
     echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
