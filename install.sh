@@ -460,7 +460,7 @@ main_menu_termux() {
     echo ""
     echo "1) Install Ws Tunnel"
     echo ""
-    echo "2) Back to menu"
+    echo "2) Back to Menu"
     echo ""
     echo "0) Exit"
     echo ""
