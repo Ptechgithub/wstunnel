@@ -458,11 +458,11 @@ main_menu_termux() {
     clear
     echo "-----Ws tunnel in Termux----"
     echo ""
-    echo "1) Install Ws Tunnel"
+    echo -e "${purple}1) ${green}Install Ws Tunnel${rest}"
     echo ""
-    echo "2) Back to Menu"
+    echo -e "${purple}2) ${cyan}Back to Menu${rest}"
     echo ""
-    echo "0) Exit"
+    echo -e "${purple}0) "${red}Exit${rest}"
     echo ""
     read -p "Enter your choice: " choice
     case "$choice" in
