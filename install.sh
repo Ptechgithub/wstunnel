@@ -431,14 +431,14 @@ inputs_termux() {
 3) socks5
 4) stdio"
 echo ""
-read -p "Enter number (default is: 1--> udp): " choice
+read -p "Enter number (default is: 1--> tcp): " choice
 
     case $choice in
         1) connection_type="tcp" ;;
         2) connection_type="udp" ;;
         3) connection_type="socks5" ;;
         4) connection_type="stdio" ;;
-        *) connection_type="udp" ;;
+        *) connection_type="tcp" ;;
     esac
     
     read -p "Do you want to use SNI? (yes/no) [default: yes]: " use_sni
