@@ -476,47 +476,48 @@ main_menu_termux() {
 }
 
 # Main menu
-clear
-echo -e "${white}By --> Peyman * Github.com/Ptechgithub * ${rest}"
-echo -e "${cyan}#===- ${purple}W${yellow}s ${purple}T${yellow}u${purple}n${yellow}n${purple}e${yellow}l ${cyan}-===#${rest}"
-echo ""
-check_tunnel_status
-echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
-echo -e "${purple}1) ${green}In${cyan}st${green}all${cyan} Ws${green}Tu${cyan}nn${green}el${rest}"
-echo ""
-echo -e "${purple}2) ${cyan}In${green}st${cyan}all Ws${green} Re${cyan}ve${green}rs${cyan}e T${green}un${cyan}ne${green}l${reset}"
-echo ""
-echo -e "${purple}3) ${green}In${cyan}st${green}all C${cyan}us${green}to${cyan}m${reset}"
-echo ""
-echo -e "${purple}4) ${yellow}Un${red}in${yellow}st${red}al${yellow}l w${red}s${yellow}tu${red}nn${yellow}el${reset}"
-echo ""
-echo -e "${purple}5) ${yellow}Install on Termux${rest}"
-echo ""
-echo -e "${purple}0) Exit${rest}"
-echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
-read -p "Please choose: " choice
+main_menu() {
+    clear
+    echo -e "${white}By --> Peyman * Github.com/Ptechgithub * ${rest}"
+    echo -e "${cyan}#===- ${purple}W${yellow}s ${purple}T${yellow}u${purple}n${yellow}n${purple}e${yellow}l ${cyan}-===#${rest}"
+    echo ""
+    check_tunnel_status
+    echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
+    echo -e "${purple}1) ${green}In${cyan}st${green}all${cyan} Ws${green}Tu${cyan}nn${green}el${rest}"
+    echo ""
+    echo -e "${purple}2) ${cyan}In${green}st${cyan}all Ws${green} Re${cyan}ve${green}rs${cyan}e T${green}un${cyan}ne${green}l${reset}"
+    echo ""
+    echo -e "${purple}3) ${green}In${cyan}st${green}all C${cyan}us${green}to${cyan}m${reset}"
+    echo ""
+    echo -e "${purple}4) ${yellow}Un${red}in${yellow}st${red}al${yellow}l w${red}s${yellow}tu${red}nn${yellow}el${reset}"
+    echo ""
+    echo -e "${purple}5) ${yellow}Install on Termux${rest}"
+    echo ""
+    echo -e "${purple}0) Exit${rest}"
+    echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
+    read -p "Please choose: " choice
 
-case $choice in
-
-    1)
-        install
-        ;;
-    2)
-        install_reverse
-        ;;
-    3)
-        install_custom
-        ;;
-    4)
-        uninstall
-        ;;
-    5)
-        main_menu_termux
-        ;;
-    0)
-        exit
-        ;;
-    *)
-        echo "Invalid choice. Please try again."
-        ;;
-esac
+    case $choice in
+        1)
+            install
+            ;;
+        2)
+            install_reverse
+            ;;
+        3)
+            install_custom
+            ;;
+        4)
+            uninstall
+            ;;
+        5)
+            main_menu_termux
+            ;;
+        0)
+            exit
+            ;;
+        *)
+            echo "Invalid choice. Please try again."
+            ;;
+    esac
+}
