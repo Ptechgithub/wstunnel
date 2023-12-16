@@ -445,10 +445,11 @@ read -p "Enter number (default is: 1--> tcp): " choice
     tls_sni_argument=""
     [ "$use_sni" = "yes" ] && read -p "Please Enter SNI [default: google.com]: " tls_sni && tls_sni_argument="--tls-sni-override $tls_sni"
 
-    # Add ?timeout_sec=0 only for UDP
-    timeout_argument=""
-    [ "$connection_type" = "udp" ] && timeout_argument="?timeout_sec=0"
-
+    if [ "$connection_type" = "udp" ]; then
+        timeout_argument="?timeout_sec=0"
+   else
+        timeout_argument=""
+    fi
     argument="wstunnel client -L '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument' $use_tls_option://$foreign_ip:$port $tls_sni_argument"
     echo "$argument"
     ./$argument
