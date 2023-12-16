@@ -388,6 +388,93 @@ check_tunnel_status() {
     fi
 }
 
+#Termux check_dependencies_termux
+check_dependencies_termux() {
+    local dependencies=("wget" "curl" "tar")
+    
+    for dep in "${dependencies[@]}"; do
+        if ! command -v "${dep}" &> /dev/null; then
+            echo "${dep} is not installed. Installing..."
+            pkg install "${dep}" -y
+        fi
+    done
+}
+#Termux install wstunnel
+install_ws_termux() {
+    pkg update -y
+    pkg upgrade -y
+    pkg update
+    check_dependencies_termux
+    latest_version=$(curl -s https://api.github.com/repos/erebe/wstunnel/releases/latest | grep -oP '"tag_name": "\K(.*?)(?=")')
+    wstunnel_file="wstunnel_${latest_version//v}_linux_arm64.tar.gz"
+    wget "https://github.com/erebe/wstunnel/releases/download/${latest_version}/${wstunnel_file}"
+    tar -xvf "$wstunnel_file" > /dev/null
+    chmod +x wstunnel
+    inputs_termux
+}
+#Termux get inputs
+inputs_termux() {
+    read -p "Enter foreign IP [External-server]: " foreign_ip
+    read -p "Please Enter Your config [vpn] Port: " config_port
+    read -p "Please Enter Connection Port (server <--> client) [default, 443]: " port
+    port=${port:-443}
+    
+    read -p "Do you want to use TLS? (yes/no) [default: yes]: " use_tls
+    use_tls=${use_tls:-yes}
+    use_tls_option="wss" # default to wss
+    [ "$use_tls" = "no" ] && use_tls_option="ws"
+    
+    read -p "Enter connection type:
+1) tcp
+2) udp
+3) socks5
+4) stdio
+
+Choose an option (default is: udp): " choice
+    case $choice in
+        1) connection_type="tcp" ;;
+        2) connection_type="udp" ;;
+        3) connection_type="socks5" ;;
+        4) connection_type="stdio" ;;
+        *) connection_type="udp" ;;
+    esac
+    
+    read -p "Do you want to use SNI? (yes/no) [default: yes]: " use_sni
+    use_sni=${use_sni:-yes}
+    tls_sni_argument=""
+    [ "$use_sni" = "yes" ] && read -p "Please Enter SNI [default: google.com]: " tls_sni && tls_sni_argument="--tls-sni-override $tls_sni"
+
+    # Add ?timeout_sec=0 only for UDP
+    timeout_argument=""
+    [ "$connection_type" = "udp" ] && timeout_argument="?timeout_sec=0"
+
+    argument="wstunnel client -L '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument' $use_tls_option://$foreign_ip:$port $tls_sni_argument"
+    echo "$argument"
+    ./$argument
+}
+
+main_menu_termux() {
+    clear
+    echo "By --> Peyman * Github.com/Ptechgithub * "
+    echo ""
+    echo "-----Ws tunnel in Termux----"
+    echo ""
+    echo "1) Install Ws Tunnel"
+    echo ""
+    echo "0) Exit"
+    read -p "Enter your choice: " choice
+    case "$choice" in
+        1)
+            install_ws_termux
+            ;;
+        0)
+            exit
+            ;;
+        *)
+            echo "Invalid choice. Please select a valid option."
+            ;;
+    esac
+}
 
 # Main menu
 clear
@@ -403,6 +490,8 @@ echo ""
 echo -e "${purple}3) ${green}In${cyan}st${green}all C${cyan}us${green}to${cyan}m${reset}"
 echo ""
 echo -e "${purple}4) ${yellow}Un${red}in${yellow}st${red}al${yellow}l w${red}s${yellow}tu${red}nn${yellow}el${reset}"
+echo ""
+echo -e "${purple}5) ${yellow}Install on Termux${rest}"
 echo ""
 echo -e "${purple}0) Exit${rest}"
 echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
@@ -421,6 +510,9 @@ case $choice in
         ;;
     4)
         uninstall
+        ;;
+    5)
+        main_menu_termux
         ;;
     0)
         exit
