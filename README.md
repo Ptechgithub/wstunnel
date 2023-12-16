@@ -114,3 +114,19 @@ Options:
   -h, --help
           Print help
 ```
+
+
+### مثال:
+
+### Simplest one
+On your remote host, start the wstunnel's server by typing this command in your terminal
+```bash
+wstunnel server ws://[::]:8080
+```
+This will create a websocket server listening on any interface on port 8080.
+On the client side use this command to forward traffic through the websocket tunnel
+```bash
+wstunnel client -L socks5://127.0.0.1:8888 --connection-min-idle 5 ws://myRemoteHost:8080
+```
+
+
