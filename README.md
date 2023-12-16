@@ -118,7 +118,7 @@ Options:
 
 ### مثال:
 
-### Simplest one
+### ساده‌ترین
 On your remote host, start the wstunnel's server by typing this command in your terminal
 ```bash
 wstunnel server ws://[::]:8080
