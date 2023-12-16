@@ -157,13 +157,13 @@ get_inputs() {
                     use_tls="ws"
                 fi
                 
-                read -p "Enter connection type:
-1) tcp
-2) udp
+                echo -e "Enter connection type:
+1) tcp  ${purple}[vless , vmess , trojan , ...]${rest}
+2) udp  ${purple}[Wireguard , hysteria, tuic , ...]${rest}
 3) socks5
-4) stdio
-
-Choose an option (default is: tcp): " choice
+4) stdio"
+echo ""
+read -p "Choose an option (default is: tcp): " choice
 
                 case $choice in
                     1) connection_type="tcp" ;;
