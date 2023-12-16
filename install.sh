@@ -462,7 +462,7 @@ main_menu_termux() {
     echo ""
     echo -e "${purple}2) ${cyan}Back to Menu${rest}"
     echo ""
-    echo -e "${purple}0) "${red}Exit${rest}"
+    echo -e "${purple}0) ${red}Exit${rest}"
     echo ""
     read -p "Enter your choice: " choice
     case "$choice" in
