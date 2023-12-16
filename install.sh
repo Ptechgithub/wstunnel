@@ -424,13 +424,14 @@ inputs_termux() {
     use_tls_option="wss" # default to wss
     [ "$use_tls" = "no" ] && use_tls_option="ws"
     
-    read -p "Enter connection type:
-1) tcp
-2) udp
+    echo -e "Enter connection type:
+1) tcp  ${purple}[vless , vmess , trojan , ...]${rest}
+2) udp  ${purple}[Wireguard , hysteria, tuic , ...]${rest}
 3) socks5
-4) stdio
+4) stdio"
+echo ""
+read -p "Choose an option (default is: tcp): " choice
 
-Choose an option (default is: udp): " choice
     case $choice in
         1) connection_type="tcp" ;;
         2) connection_type="udp" ;;
