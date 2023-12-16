@@ -12,7 +12,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/in
 - تانل معکوس 
 - امکان نصب روی Termux جهت دور زدن محدودیت پورت udp 
 
-##لیست کامل دستورات 
+## لیست کامل دستورات
 
 ```
 Use the websockets protocol to tunnel {TCP,UDP} traffic
