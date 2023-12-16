@@ -13,6 +13,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/in
 - تانل معکوس 
 - امکان نصب روی Termux جهت دور زدن محدودیت پورت udp 
 
+### جهت نصب دستی Custom از لیست زیر میتوانید استفاده کنید.
+
 ## لیست کامل دستورات
 
 ```
