@@ -455,8 +455,6 @@ Choose an option (default is: udp): " choice
 
 main_menu_termux() {
     clear
-    echo "By --> Peyman * Github.com/Ptechgithub * "
-    echo ""
     echo "-----Ws tunnel in Termux----"
     echo ""
     echo "1) Install Ws Tunnel"
