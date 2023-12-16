@@ -401,24 +401,24 @@ check_dependencies_termux() {
 }
 #Termux install wstunnel
 install_ws_termux() {
-if [ -e "wstunnel" ]; then
-    echo "wstunnel already exists. Skipping installation."
-    echo ""
-else
-    pkg update -y
-    pkg upgrade -y
-    pkg update
-    check_dependencies_termux
-    latest_version=$(curl -s https://api.github.com/repos/erebe/wstunnel/releases/latest | grep -oP '"tag_name": "\K(.*?)(?=")')
-    wstunnel_file="wstunnel_${latest_version//v}_linux_arm64.tar.gz"
-    wget "https://github.com/erebe/wstunnel/releases/download/${latest_version}/${wstunnel_file}"
-    tar -xvf "$wstunnel_file" > /dev/null
-    chmod +x wstunnel
-    rm "$wstunnel_file" LICENSE README.md
-    
-  fi
+    if [ -e "wstunnel" ]; then
+        echo "wstunnel already exists. Skipping installation."
+        echo ""
+    else
+        pkg update -y
+        pkg upgrade -y
+        pkg update
+        check_dependencies_termux
+        latest_version=$(curl -s https://api.github.com/repos/erebe/wstunnel/releases/latest | grep -oP '"tag_name": "\K(.*?)(?=")')
+        wstunnel_file="wstunnel_${latest_version//v}_linux_arm64.tar.gz"
+        wget "https://github.com/erebe/wstunnel/releases/download/${latest_version}/${wstunnel_file}"
+        tar -xvf "$wstunnel_file" > /dev/null
+        chmod +x wstunnel
+        rm "$wstunnel_file" LICENSE README.md
+    fi
     inputs_termux
 }
+
 #Termux get inputs
 inputs_termux() {
     read -p "Enter foreign IP [External-server]: " foreign_ip
