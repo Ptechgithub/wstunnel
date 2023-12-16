@@ -502,7 +502,7 @@ main_menu() {
     echo ""
     echo -e "${purple}4) ${yellow}Un${red}in${yellow}st${red}al${yellow}l w${red}s${yellow}tu${red}nn${yellow}el${reset}"
     echo ""
-    echo -e "${purple}5) ${white}In${cyan}sta${white}ll ${cyan}on ${purple}Termux (no root)${rest}"
+    echo -e "${purple}5) ${white}In${cyan}sta${white}ll ${cyan}on ${purple}Termux ${white}(no root)${rest}"
     echo ""
     echo -e "${purple}0) Exit${rest}"
     echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
