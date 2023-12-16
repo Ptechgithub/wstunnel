@@ -5,7 +5,7 @@ Tunnel all your traffic over websocket protocol - Bypass firewalls/DPI - one-cli
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/install.sh)
 ```
-
+![13](https://raw.githubusercontent.com/Ptechgithub/configs/main/media/14.jpg)
 
 
 
