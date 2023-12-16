@@ -380,7 +380,7 @@ uninstall() {
 
 check_tunnel_status() {
     # Check the status of the tunnel service
-    if sudo systemctl is-active --quiet wstunnel.service; then
+    if systemctl is-active --quiet wstunnel.service; then
         echo -e "${yellow}~~~~~~~~~~~~~~~~~~~~~~~~~~~${rest}"
         echo -e "${cyan}WS Tunnel ==>:${purple}[${green}running ✔${purple}]${rest}"
     else
