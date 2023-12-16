@@ -9,7 +9,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/in
 
 
 
-## Command line
+## لیست دستورات
 
 ```
 Use the websockets protocol to tunnel {TCP,UDP} traffic
