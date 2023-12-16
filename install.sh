@@ -463,7 +463,8 @@ read -p "Enter number (default is: 1--> tcp): " choice
     fi
     argument="client -L '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument' $use_tls_option://$foreign_ip:$port $tls_sni_argument"
     
-    echo "$argument" && ./wstunnel "$argument"
+    echo "$argument"
+    ./wstunnel client -L '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument' $use_tls_option://$foreign_ip:$port $tls_sni_argument
     
 }
 
