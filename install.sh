@@ -459,12 +459,16 @@ main_menu_termux() {
     echo "-----Ws tunnel in Termux----"
     echo ""
     echo "1) Install Ws Tunnel"
+    echo "2) Install Ws Tunnel"
+    echo "0) Back to menu"
     echo ""
-    echo "0) Exit"
     read -p "Enter your choice: " choice
     case "$choice" in
         1)
             install_ws_termux
+            ;;
+        1)
+            main_menu
             ;;
         0)
             exit
