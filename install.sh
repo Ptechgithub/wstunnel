@@ -404,7 +404,6 @@ install_ws_termux() {
 if [ -e "wstunnel" ]; then
     echo "wstunnel already exists. Skipping installation."
     echo ""
-    inputs_termux
 else
     pkg update -y
     pkg upgrade -y
@@ -416,8 +415,10 @@ else
     tar -xvf "$wstunnel_file" > /dev/null
     chmod +x wstunnel
     rm "$wstunnel_file" LICENSE README.md
-    inputs_termux
+    
   fi
+  
+    inputs_termux
 }
 #Termux get inputs
 inputs_termux() {
