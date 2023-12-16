@@ -130,3 +130,6 @@ wstunnel client -L socks5://127.0.0.1:8888 --connection-min-idle 5 ws://myRemote
 ```
 
 
+]توضیحات کامل ](https://github.com/erebe/wstunnel/tree/main)
+
+
