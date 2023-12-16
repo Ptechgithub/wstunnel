@@ -1,6 +1,6 @@
 # wstunnel
-
 Tunnel all your traffic over websocket protocol - Bypass firewalls/DPI - one-click-script
+
 تونل تمام ترافیک خود از طریق پروتکل وب سوکت - دور زدن فایروال/DPI - اسکریپت با یک کلیک
 
 ```
