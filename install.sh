@@ -417,6 +417,7 @@ else
     chmod +x wstunnel
     rm "$wstunnel_file" LICENSE README.md
     inputs_termux
+ fi
 }
 #Termux get inputs
 inputs_termux() {
