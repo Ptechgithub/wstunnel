@@ -416,8 +416,8 @@ else
     tar -xvf "$wstunnel_file" > /dev/null
     chmod +x wstunnel
     rm "$wstunnel_file" LICENSE README.md
-  fi
     inputs_termux
+  fi
 }
 #Termux get inputs
 inputs_termux() {
