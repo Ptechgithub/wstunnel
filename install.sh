@@ -431,7 +431,7 @@ inputs_termux() {
 3) socks5
 4) stdio"
 echo ""
-read -p "Enter number (default is: 1--> tcp): " choice
+read -p "Enter number (default is: 1--> udp): " choice
 
     case $choice in
         1) connection_type="tcp" ;;
