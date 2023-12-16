@@ -456,7 +456,7 @@ read -p "Choose an option (default is: tcp): " choice
 
 main_menu_termux() {
     clear
-    echo "-----Ws tunnel in Termux----"
+    echo -e "${purple}-----Ws tunnel in Termux----${rest}"
     echo ""
     echo -e "${purple}1) ${green}Install Ws Tunnel${rest}"
     echo ""
