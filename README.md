@@ -7,9 +7,10 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/in
 ```
 ![13](https://raw.githubusercontent.com/Ptechgithub/configs/main/media/14.jpg)
 
+- تانل بر بستر websocket 
+- امکان نصب روی Termux جهت دور زدن محدودیت پورت udp 
 
-
-## لیست دستورات
+##لیست کامل دستورات 
 
 ```
 Use the websockets protocol to tunnel {TCP,UDP} traffic
