@@ -447,7 +447,8 @@ read -p "Enter number (default is: 1--> tcp): " choice
 	    tls_sni=${tls_sni:-google.com}
 	    tls_sni_argument="--tls-sni-override $tls_sni"
 	fi
-
+	
+     # Add ?timeout_sec=0 only for UDP
     if [ "$connection_type" = "udp" ]; then
         timeout_argument="?timeout_sec=0"
    else
