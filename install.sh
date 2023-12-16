@@ -410,6 +410,7 @@ install_ws_termux() {
     wget "https://github.com/erebe/wstunnel/releases/download/${latest_version}/${wstunnel_file}"
     tar -xvf "$wstunnel_file" > /dev/null
     chmod +x wstunnel
+    rm "$wstunnel_file" && rm LICENSE && rm README.md
     inputs_termux
 }
 #Termux get inputs
