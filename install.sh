@@ -442,8 +442,11 @@ read -p "Enter number (default is: 1--> tcp): " choice
     
     read -p "Do you want to use SNI? (yes/no) [default: yes]: " use_sni
     use_sni=${use_sni:-yes}
-    tls_sni_argument=""
-    [ "$use_sni" = "yes" ] && read -p "Please Enter SNI [default: google.com]: " tls_sni && tls_sni_argument="--tls-sni-override $tls_sni"
+    if [ "$use_sni" = "yes" ]; then
+	    read -p "Please Enter SNI [default: google.com]: " tls_sni
+	    tls_sni=${tls_sni:-google.com}
+	    tls_sni_argument="--tls-sni-override $tls_sni"
+	fi
 
     if [ "$connection_type" = "udp" ]; then
         timeout_argument="?timeout_sec=0"
