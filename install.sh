@@ -469,7 +469,7 @@ main_menu_termux() {
         1)
             install_ws_termux
             ;;
-        1)
+        2)
             main_menu
             ;;
         0)
