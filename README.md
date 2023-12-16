@@ -129,7 +129,6 @@ On the client side use this command to forward traffic through the websocket tun
 wstunnel client -L socks5://127.0.0.1:8888 --connection-min-idle 5 ws://myRemoteHost:8080
 ```
 
-
-]توضیحات کامل ](https://github.com/erebe/wstunnel/tree/main)
+[لینک اصلی پروژه](https://github.com/erebe/wstunnel/tree/main)
 
 
