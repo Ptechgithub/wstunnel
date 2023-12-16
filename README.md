@@ -8,6 +8,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/in
 ![13](https://raw.githubusercontent.com/Ptechgithub/configs/main/media/14.jpg)
 
 - تانل بر بستر websocket 
+- تانل معکوس 
 - امکان نصب روی Termux جهت دور زدن محدودیت پورت udp 
 
 ##لیست کامل دستورات 
