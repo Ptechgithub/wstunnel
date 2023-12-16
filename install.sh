@@ -163,7 +163,7 @@ get_inputs() {
 3) socks5
 4) stdio"
 echo ""
-read -p "Choose an option (default is: tcp): " choice
+read -p "Enter number (default is: 1--> tcp): " choice
 
                 case $choice in
                     1) connection_type="tcp" ;;
@@ -248,7 +248,7 @@ get_inputs_Reverse() {
 3) socks5
 4) stdio"
 echo ""
-read -p "Choose an option (default is: tcp): " choice
+read -p "Enter number (default is: 1--> tcp): " choice
 
                 case $choice in
                     1) connection_type="tcp" ;;
@@ -430,7 +430,7 @@ inputs_termux() {
 3) socks5
 4) stdio"
 echo ""
-read -p "Choose an option (default is: tcp): " choice
+read -p "Enter number (default is: 1--> tcp): " choice
 
     case $choice in
         1) connection_type="tcp" ;;
