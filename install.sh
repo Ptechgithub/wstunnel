@@ -523,7 +523,7 @@ save() {
 
 main_menu_termux() {
      if [ "$(uname -o)" != "Android" ]; then
-        echo -e "${red}Please Run on Termux.${reset}"
+        echo -e "${red}Please Run on Termux.${rest}"
         exit 1
     fi
     
