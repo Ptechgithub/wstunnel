@@ -457,6 +457,7 @@ uninstall_ws_termux() {
 
 #Termux get inputs
 inputs_termux() {
+    clear
     read -p "Enter foreign IP [External-server]: " foreign_ip
     read -p "Please Enter Your config [vpn] Port: " config_port
     read -p "Please Enter Connection Port (server <--> client) [default, 443]: " port
