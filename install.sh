@@ -515,6 +515,7 @@ save() {
         chmod +x run
         mv run "$PATH/"
         echo "Argument saved to 'run' binary file."
+        echo -e "${green} ** To Run Tunnel again, you can only type 'run' and press Enter${rest}"
     fi
 }
 
