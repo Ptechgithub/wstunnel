@@ -427,8 +427,13 @@ check_dependencies_termux() {
 }
 #Termux install wstunnel
 install_ws_termux() {
+    if [ "$(uname -o)" != "Android" ]; then
+        echo -e "${red}Please Run on Termux.${reset}"
+        exit 1
+    fi
+
     if [ -e "$PATH/wstunnel" ]; then
-        echo -e "${green}wstunnel already Installed. Skipping installation.${rest}"
+        echo -e "${green}wstunnel already installed. Skipping installation.${reset}"
         sleep 1
     else
         pkg update -y
