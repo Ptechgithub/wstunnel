@@ -361,6 +361,7 @@ EOL
     sudo systemctl daemon-reload
     sudo systemctl enable wstunnel.service
     sudo systemctl start wstunnel.service
+    sleep 1
     check_tunnel_status
 }
 
