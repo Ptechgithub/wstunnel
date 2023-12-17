@@ -500,7 +500,6 @@ read -p "Enter number (default is: 1--> tcp): " choice
     fi
     argument="wstunnel client -L $connection_type://[::]:$config_port:localhost:$config_port$timeout_argument $use_tls_option://$foreign_ip:$port $tls_sni_argument"
     echo -e "${yellow}------------Your-Arguments------------${rest}"
-    echo ""
     echo "$argument"
     echo -e "${yellow}--------------------------------------${rest}"
     echo ""
@@ -516,7 +515,9 @@ save() {
         chmod +x run
         mv run "$PATH/"
         echo "Argument saved to 'run' binary file."
-        echo -e "${green} ** To Run Tunnel again, you can only type 'run' and press Enter${rest}"
+        echo -e "${yellow}--------------------------------------${rest}"
+        echo -e "${green}** To Run Tunnel again, you can only type 'run' and press Enter **${rest}"
+        echo -e "${yellow}--------------------------------------${rest}"
     fi
 }
 
