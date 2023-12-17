@@ -428,7 +428,7 @@ check_dependencies_termux() {
 #Termux install wstunnel
 install_ws_termux() {
     if [ -e "$PATH/wstunnel" ]; then
-        echo "wstunnel already exists. Skipping installation."
+        echo "wstunnel already Installed. Skipping installation."
         echo ""
     else
         pkg update -y
