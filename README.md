@@ -10,7 +10,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/in
 
 - این اسکریپ نصب wstunnel برای ایجاد یک تونل امن از طریق پروتکل WebSocket استفاده می‌شود.
 - تانل بر بستر websocket 
-- تانل بین دو سرور
+- تانل بین دو سرور یا (سرور - کلاینت )
 - تانل معکوس 
 - امکان نصب روی Termux جهت دور زدن محدودیت پورت udp 
 
