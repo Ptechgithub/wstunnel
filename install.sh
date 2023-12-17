@@ -504,7 +504,7 @@ read -p "Enter number (default is: 1--> tcp): " choice
     echo -e "${yellow}--------------------------------------${rest}"
     echo ""
     save "$argument"
-    ./$argument
+    run
 }
 
 save() {
