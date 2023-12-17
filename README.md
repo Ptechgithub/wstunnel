@@ -1,13 +1,14 @@
 # wstunnel
-تونل تمام ترافیک خود از طریق پروتکل وب سوکت - دور زدن فایروال/DPI - اسکریپت با یک کلیک
 
 Tunnel all your traffic over websocket protocol - Bypass firewalls/DPI - one-click-script
 
+## Install
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/wstunnel/main/install.sh)
 ```
 ![13](https://raw.githubusercontent.com/Ptechgithub/configs/main/media/14.jpg)
 
+- این اسکریپ نصب wstunnel برای ایجاد یک تونل امن از طریق پروتکل WebSocket استفاده می‌شود.
 - تانل بر بستر websocket 
 - تانل بین دو سرور
 - تانل معکوس 
