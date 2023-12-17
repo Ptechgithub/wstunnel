@@ -187,7 +187,19 @@ read -p "Enter number (default is: 1--> tcp): " choice
                     timeout_argument=""
                 fi
 
-                argument="client -L '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument' $use_tls://$foreign_ip:$port $tls_sni_argument"
+                read -p "Do you want to add more ports? (yes/no) [default: no]: " add_port
+				add_port=${add_port:-no}
+				
+				if [ "$add_port" == "yes" ]; then
+				    read -p "Enter ports separated by commas (e.g., 2096,8080): " port_list
+				    IFS=',' read -ra ports <<< "$port_list"
+				
+				    for new_port in "${ports[@]}"; do
+				        argument+=" -L '$connection_type://[::]:$new_port:localhost:$new_port$timeout_argument'"
+				    done
+				fi
+
+                argument="client -L '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument'$argument $use_tls://$foreign_ip:$port $tls_sni_argument"
                 break
                 ;;
             3)
@@ -272,7 +284,19 @@ read -p "Enter number (default is: 1--> tcp): " choice
                     timeout_argument=""
                 fi
 
-                argument="client -R '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument' $use_tls://$foreign_ip:$port $tls_sni_argument"
+                read -p "Do you want to add more ports? (yes/no) [default: no]: " add_port
+				add_port=${add_port:-no}
+				
+				if [ "$add_port" == "yes" ]; then
+				    read -p "Enter ports separated by commas (e.g., 2096,8080): " port_list
+				    IFS=',' read -ra ports <<< "$port_list"
+				
+				    for new_port in "${ports[@]}"; do
+				        argument+=" -R '$connection_type://[::]:$new_port:localhost:$new_port$timeout_argument'"
+				    done
+				fi
+
+                argument="client -R '$connection_type://[::]:$config_port:localhost:$config_port$timeout_argument'$argument $use_tls://$foreign_ip:$port $tls_sni_argument"
                 break
                 ;;
             3)
