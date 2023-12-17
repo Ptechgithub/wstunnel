@@ -440,9 +440,19 @@ install_ws_termux() {
         wget "https://github.com/erebe/wstunnel/releases/download/${latest_version}/${wstunnel_file}"
         tar -xvf "$wstunnel_file" > /dev/null
         chmod +x wstunnel
+        mv wstunnel "$PATH/"
         rm "$wstunnel_file" LICENSE README.md
     fi
     inputs_termux
+}
+
+uninstall_ws_termux() {
+    if [ -e "$PATH/run" ]; then
+        rm "$PATH/run"
+        echo -e "${green}Ws Tunnel has been uninstalled.${rest}"
+    else
+        echo -e "${red}Ws Tunnel is not installed.${rest}"
+    fi
 }
 
 #Termux get inputs
@@ -493,7 +503,18 @@ read -p "Enter number (default is: 1--> tcp): " choice
     echo "$argument"
     echo -e "${yellow}--------------------------------------${rest}"
     echo ""
-   ./$argument
+    save "$argument"
+    ./$argument
+}
+
+save() {
+    if [ -z "$1" ]; then
+        echo "Usage: save <argument>"
+    else
+        echo -n "$1" > run
+        mv run "$PATH/"
+        echo "Argument saved to 'run' binary file."
+    fi
 }
 
 main_menu_termux() {
@@ -502,7 +523,9 @@ main_menu_termux() {
     echo ""
     echo -e "${purple}1) ${green}Install Ws Tunnel${rest}"
     echo ""
-    echo -e "${purple}2) ${cyan}Back to Menu${rest}"
+    echo -e "${purple}2) ${red}Uninstall Ws Tunnel${rest}"
+    echo ""
+    echo -e "${purple}3) ${cyan}Back to Menu${rest}"
     echo ""
     echo -e "${purple}0) ${red}Exit${rest}"
     echo ""
@@ -512,6 +535,9 @@ main_menu_termux() {
             install_ws_termux
             ;;
         2)
+            uninstall_ws_termux
+            ;;
+        3)
             main_menu
             ;;
         0)
