@@ -512,6 +512,7 @@ save() {
         echo "Usage: save <argument>"
     else
         echo -n "$1" > run
+        chmod +x run
         mv run "$PATH/"
         echo "Argument saved to 'run' binary file."
     fi
