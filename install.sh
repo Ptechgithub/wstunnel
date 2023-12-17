@@ -381,7 +381,8 @@ install_reverse() {
     else
         install_wstunnel
         get_inputs_Reverse
-    fi
+    fi  
+        sleep 1
         check_tunnel_status
 }
 
